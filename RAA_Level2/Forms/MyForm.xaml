@@ -48,15 +48,15 @@
         <TextBlock Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center">Select Units:</TextBlock>
 
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-            <CheckBox x:Name="chbCheck1" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Center" FontStyle="Italic">Imperial</CheckBox>
-            <CheckBox x:Name="chbCheck2" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Center" FontStyle="Italic">Metric</CheckBox>
+            <RadioButton x:Name="chbCheck1" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Center" FontStyle="Italic" GroupName="Units" IsChecked="True">Metric</RadioButton>
+            <RadioButton x:Name="chbCheck2" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Center" FontStyle="Italic" GroupName="Units">Imperial</RadioButton>
         </StackPanel>
 
         <TextBlock Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center">Select View Types to create:</TextBlock>
         
         <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Vertical">
-            <CheckBox x:Name="chbCheck4" Grid.Column="1" Margin="0,10,0,0" VerticalAlignment="Center">Create Floor Plans</CheckBox>
-            <CheckBox x:Name="chbCheck5"  Grid.Column="1" Margin="0,10,0,0" VerticalAlignment="Center">Create Ceiling Plans</CheckBox>
+            <RadioButton x:Name="chbCheck4" Grid.Column="1" Margin="0,10,0,0" VerticalAlignment="Center" GroupName="View Types" IsChecked="True">Create Floor Plans</RadioButton>
+            <RadioButton x:Name="chbCheck5"  Grid.Column="1" Margin="0,10,0,0" VerticalAlignment="Center" GroupName="View Types">Create Ceiling Plans</RadioButton>
         </StackPanel>
 
         <Grid Grid.Row="9" Grid.Column="1">
