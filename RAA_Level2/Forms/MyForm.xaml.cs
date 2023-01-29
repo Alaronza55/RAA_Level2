@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,9 +27,21 @@ namespace RAA_Level2
             InitializeComponent();
         }
 
+        // Select button Event
         private void btnselect_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.InitialDirectory = @"C:\";
+            openFile.Filter = "csv files (*.csv)|*.csv";
 
+            if (openFile.ShowDialog() == true)
+            {
+                tbxFile.Text = openFile.FileName;
+            }
+            else
+            {
+                tbxFile.Text = "";
+            }
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)

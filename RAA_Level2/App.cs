@@ -20,7 +20,7 @@ namespace RAA_Level2
             // 1. Create ribbon tab
             try
             {
-                app.CreateRibbonTab("Revit Add-in Academy");
+                app.CreateRibbonTab("RAA_My first plugin");
             }
             catch (Exception)
             {
@@ -28,7 +28,7 @@ namespace RAA_Level2
             }
 
             // 2. Create ribbon panel 
-            RibbonPanel panel = Utils.CreateRibbonPanel(app, "Revit Add-in Academy", "Revit Tools");
+            RibbonPanel panel = Utils.CreateRibbonPanel(app, "RAA_My first plugin", "Revit Tools");
 
             // 3. Create button data instances
             ButtonDataClass myButtonData = new ButtonDataClass("MyButton", "My Button", Command.GetMethod(), Properties.Resources.Blue_32, Properties.Resources.Blue_16, "This is a tooltip");
