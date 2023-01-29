@@ -25,5 +25,20 @@ namespace RAA_Level2
         {
             InitializeComponent();
         }
+
+        private void btnselect_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
