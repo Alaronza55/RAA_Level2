@@ -26,9 +26,9 @@ namespace RAA_Level2
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            // put any code needed for the form here
+            // Step 1 : put any code needed for the form here
 
-            // open form
+            // Step 2 : open form
             MyForm currentForm = new MyForm()
             {
                 Width = 800,
@@ -39,7 +39,27 @@ namespace RAA_Level2
 
             currentForm.ShowDialog();
 
-            // get form data and do something
+            //Step3 : get form data and do something
+            if(currentForm.DialogResult == false)
+            {
+                //do something -> Close the addin
+                return Result.Cancelled;
+            }
+
+            //do something
+            string filename = currentForm.GetCsvFile();
+
+            string viewtypes = currentForm.GetViewTypes();
+
+            string getunits = currentForm.GetUnits();
+
+            TaskDialog.Show("Input", "File: "+filename); 
+
+
+            TaskDialog.Show("View Types", "View Types: "+viewtypes);
+
+
+            TaskDialog.Show("Units:", "Units: " + getunits);
 
             return Result.Succeeded;
         }

@@ -46,12 +46,51 @@ namespace RAA_Level2
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-
+            this.DialogResult = true;
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
+            this. DialogResult = false;
+            this.Close();
+        }
+
+        public string GetCsvFile()
+            { 
+            return tbxFile.Text;
+            }
+
+        public string GetViewTypes()
+        {
+            if (floor.IsChecked == true && ceiling.IsChecked == false)
+            { 
+                string floorplans = "Floor Plans";
+                return floorplans;
+            }
+
+            else if (floor.IsChecked == true && ceiling.IsChecked == true)
+            {
+                string floorandceilingplans = "Floor and Ceiling Plans";
+                return floorandceilingplans;
+            }
+
+            else
+            {
+                string ceilingplans = "Ceiling Plans";
+                return ceilingplans;
+            }
 
         }
+
+
+        public string GetUnits()
+        {
+            if (metric.IsChecked == true)
+                return metric.Content.ToString();
+            else
+                return imperial.Content.ToString();  
+        }
+
     }
 }
