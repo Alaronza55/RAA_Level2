@@ -64,8 +64,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="160"/>
             </Grid.ColumnDefinitions>
-            <Button Background="Green" Grid.Column="1" x:Name="btnOK" Width="75" HorizontalAlignment="Left" Click="btnselect_Click" Margin="0,0,5,0">Ok</Button>
-            <Button Background="Red" Grid.Column="1" x:Name="btnCancel" Width="75" HorizontalAlignment="Right" Click="btnselect_Click" Margin="5,0,0,0">Cancel</Button>
+            <Button Background="Green" Grid.Column="1" x:Name="btnOK" Width="75" HorizontalAlignment="Left" Click="btnOK_Click" Margin="0,0,5,0">Ok</Button>
+            <Button Background="Red" Grid.Column="1" x:Name="btnCancel" Width="75" HorizontalAlignment="Right" Click="btnCancel_Click" Margin="5,0,0,0">Cancel</Button>
         </Grid>
 
     </Grid>
