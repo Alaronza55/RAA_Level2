@@ -39,6 +39,9 @@
     <StartAction>Program</StartAction>
     <StartProgram>$(ProgramW6432)\Autodesk\Revit 2020\Revit.exe</StartProgram>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Awicons-Vista-Artistic-Office-building.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -72,7 +75,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Awicons-Vista-Artistic-Office-building.ico" />
     <Content Include="RAA_Level2.addin" />
+    <EmbeddedResource Include="Resources\City_16.png" />
+    <EmbeddedResource Include="Resources\City_32.png" />
     <EmbeddedResource Include="Resources\Yellow_32.png" />
     <EmbeddedResource Include="Resources\Yellow_16.png" />
     <EmbeddedResource Include="Resources\Red_32.png" />
