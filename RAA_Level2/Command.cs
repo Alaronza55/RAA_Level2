@@ -8,6 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
+using System.IO;
+using System.Windows.Documents;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.Win32;
 
 #endregion
 
@@ -46,23 +50,32 @@ namespace RAA_Level2
                 return Result.Cancelled;
             }
 
-            //do something
+            //Print a window with response
             string filename = currentForm.GetCsvFile();
 
             string viewtypes = currentForm.GetViewTypes();
 
             string getunits = currentForm.GetUnits();
 
-            TaskDialog.Show("Input", "File: "+filename); 
+            TaskDialog.Show("Input", "File: "+ filename); 
 
 
-            TaskDialog.Show("View Types", "View Types: "+viewtypes);
+            TaskDialog.Show("View Types", "View Types: "+ viewtypes);
 
 
             TaskDialog.Show("Units:", "Units: " + getunits);
 
+            //Import CSV
+
+
+            // Process Data
+
+
+
+
             return Result.Succeeded;
         }
+
 
         public static String GetMethod()
         {
