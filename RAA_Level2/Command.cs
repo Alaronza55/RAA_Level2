@@ -57,16 +57,24 @@ namespace RAA_Level2
 
             string getunits = currentForm.GetUnits();
 
-            TaskDialog.Show("Input", "File: "+ filename); 
+            TaskDialog.Show("Input", "File: " + filename);
 
 
-            TaskDialog.Show("View Types", "View Types: "+ viewtypes);
+            TaskDialog.Show("View Types", "View Types: " + viewtypes);
 
 
             TaskDialog.Show("Units:", "Units: " + getunits);
 
-            //Import CSV
 
+            //Import CSV
+            //Read all elements of CSV -> Big Bucket
+            string[] dataArray = System.IO.File.ReadAllLines(filename);
+            
+            foreach( string data in dataArray )
+            {
+                string[] cellstring = data.Split(',');
+                string[] levelName = cellstring[0];
+            }
 
 
             // Process Data
