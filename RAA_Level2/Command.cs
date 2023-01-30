@@ -35,7 +35,7 @@ namespace RAA_Level2
             // Step 2 : open form
             MyForm currentForm = new MyForm()
             {
-                Width = 800,
+                Width = 500,
                 Height = 450,
                 WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
                 Topmost = true,
@@ -66,6 +66,7 @@ namespace RAA_Level2
             TaskDialog.Show("Units:", "Units: " + getunits);
 
             //Import CSV
+
 
 
             // Process Data
