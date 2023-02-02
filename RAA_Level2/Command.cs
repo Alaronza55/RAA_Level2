@@ -105,21 +105,11 @@ namespace RAA_Level2
                 double metricConvert = actualNumber * 3.28084;
 
                 // Create level -> Default in decimal feet in REVIT API
-                Level currentLevel = Level.Create(doc, metricConvert);
+                Level currentLevel = Level.Create(doc, actualNumber);
                 currentLevel.Name= textName;
 
                 ViewFamilyType planVFT = GetViewFamilyTypeByName(doc, "Floor Plan", ViewFamily.FloorPlan);
-                {
-                    FilteredElementCollector collector = new FilteredElementCollector(doc);
-                    collector.OfClass(typeof(ViewFamilyType));
-
-                    foreach(ViewFamilyType currentVFT in collector)
-                    {
-                        if(currentVFT.Name )
-                    }
-                }
-
-                ViewFamilyType ceilingPlanVFT = GetViewFamilyTypeByName(doc, "Floor Plan", ViewFamily.Ce);
+                ViewFamilyType ceilingPlanVFT = GetViewFamilyTypeByName(doc, "Ceiling Plan", ViewFamily.CeilingPlan);
 
                 ViewPlan plan = ViewPlan.Create(doc, planVFT.Id, currentLevel.Id);
                 ViewPlan ceilingPlan = ViewPlan.Create(doc, ceilingPlanVFT.Id, currentLevel.Id);
@@ -134,9 +124,20 @@ namespace RAA_Level2
             return Result.Succeeded;
         }
 
-        private ViewFamilyType GetViewFamilyTypeByName(Document doc, string v, ViewFamily floorPlan)
+        private ViewFamilyType GetViewFamilyTypeByName(Document doc, string typeName, ViewFamily viewFamily)
         {
-            throw new NotImplementedException();
+            FilteredElementCollector collector = new FilteredElementCollector(doc);
+            collector.OfClass(typeof(ViewFamilyType));
+
+            foreach (ViewFamilyType currentVFT in collector)
+            {
+                if (currentVFT.Name == typeName && currentVFT.ViewFamily == viewFamily)
+                {
+                    return currentVFT;
+                }
+            }
+
+            return null;
         }
 
         public static String GetMethod()
