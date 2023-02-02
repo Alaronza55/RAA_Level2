@@ -75,10 +75,16 @@ namespace RAA_Level2
                 return floorandceilingplans;
             }
 
-            else
+            else if (floor.IsChecked == false && ceiling.IsChecked == true)
             {
                 string ceilingplans = "Ceiling Plans";
                 return ceilingplans;
+            }
+
+            else
+            {
+                string noPlans = "No View Types have been selected : No views will be created";
+                return noPlans;
             }
 
         }
