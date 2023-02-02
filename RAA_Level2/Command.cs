@@ -119,8 +119,26 @@ namespace RAA_Level2
                     ViewFamilyType planVFT = GetViewFamilyTypeByName(doc, "Floor Plan", ViewFamily.FloorPlan);
                     ViewFamilyType ceilingPlanVFT = GetViewFamilyTypeByName(doc, "Ceiling Plan", ViewFamily.CeilingPlan);
 
-                    ViewPlan plan = ViewPlan.Create(doc, planVFT.Id, currentLevel.Id);
-                    ViewPlan ceilingPlan = ViewPlan.Create(doc, ceilingPlanVFT.Id, currentLevel.Id);
+                    if (currentForm.GetViewTypes() == "Floor Plans")
+                    {
+                        ViewPlan plan = ViewPlan.Create(doc, planVFT.Id, currentLevel.Id);
+                    }
+
+                    else if (currentForm.GetViewTypes() == "Floor and Ceiling Plans")
+                    {
+                        ViewPlan plan = ViewPlan.Create(doc, planVFT.Id, currentLevel.Id);
+                        ViewPlan ceilingPlan = ViewPlan.Create(doc, ceilingPlanVFT.Id, currentLevel.Id);
+                    }
+
+                    else if (currentForm.GetViewTypes() == "Ceiling Plans")
+                    {
+                        ViewPlan ceilingPlan = ViewPlan.Create(doc, ceilingPlanVFT.Id, currentLevel.Id);
+                    }
+
+                    else
+                    {
+
+                    }
 
 
                 }
@@ -162,12 +180,31 @@ namespace RAA_Level2
                     Level currentLevel = Level.Create(doc, metricConvert);
                     currentLevel.Name = textName;
 
+
                     ViewFamilyType planVFT = GetViewFamilyTypeByName(doc, "Floor Plan", ViewFamily.FloorPlan);
                     ViewFamilyType ceilingPlanVFT = GetViewFamilyTypeByName(doc, "Ceiling Plan", ViewFamily.CeilingPlan);
 
-                    ViewPlan plan = ViewPlan.Create(doc, planVFT.Id, currentLevel.Id);
-                    ViewPlan ceilingPlan = ViewPlan.Create(doc, ceilingPlanVFT.Id, currentLevel.Id);
 
+                    if (currentForm.GetViewTypes() == "Floor Plans")
+                    {
+                        ViewPlan plan = ViewPlan.Create(doc, planVFT.Id, currentLevel.Id);
+                    }
+
+                    else if (currentForm.GetViewTypes() == "Floor and Ceiling Plans")
+                    {
+                        ViewPlan plan = ViewPlan.Create(doc, planVFT.Id, currentLevel.Id);
+                        ViewPlan ceilingPlan = ViewPlan.Create(doc, ceilingPlanVFT.Id, currentLevel.Id);
+                    }
+
+                    else if (currentForm.GetViewTypes() == "Ceiling Plans")
+                    {
+                        ViewPlan ceilingPlan = ViewPlan.Create(doc, ceilingPlanVFT.Id, currentLevel.Id);
+                    }
+
+                    else
+                    {
+                    
+                    }
 
                 }
                 // Commit the changes to the model and throw them out
