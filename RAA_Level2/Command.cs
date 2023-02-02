@@ -66,6 +66,15 @@ namespace RAA_Level2
             TaskDialog.Show("Units:", "Units: " + getunits);
 
 
+            //If Imperial
+
+            if (currentForm.GetUnits() == "Imperial")
+                {
+                TaskDialog.Show("View Types", "coucou");
+                }
+
+
+
             //Import CSV
             //Read all elements of CSV -> Big Bucket
             string[] dataArray = System.IO.File.ReadAllLines(filename);
