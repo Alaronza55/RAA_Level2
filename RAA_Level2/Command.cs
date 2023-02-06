@@ -48,6 +48,7 @@ namespace RAA_Level2
             if(currentForm.GetCsvFile() == "")
             {
                 //do something -> Close the addin
+                TaskDialog.Show("Error", "The item in the number column is not a number");
                 return Result.Cancelled;
             }
 
