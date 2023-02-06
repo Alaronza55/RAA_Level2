@@ -171,7 +171,7 @@ namespace RAA_Level2
 
                     if (convertNumber == false)
                     {
-                        TaskDialog.Show("Error", "The item in the number column is not a number");
+                        TaskDialog.Show("Error", "Please choose a CSV file");
                     }
 
                     //Conversion Techniek
