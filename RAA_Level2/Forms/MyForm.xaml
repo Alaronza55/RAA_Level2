@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RAA_Level2"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="500"
-             Title="RAA_Level2" Background="NavajoWhite">
+             d:DesignHeight="350" d:DesignWidth="500"
+             Title="RAA_Level2" Background="#1D1D1D">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -33,30 +33,30 @@
             <ColumnDefinition Width="10"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Arial Black" FontSize="20">Project Setup:</Label>
-        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center">Select Setup CSV File:</TextBlock>
+        <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Arial Black" FontSize="20" Foreground="White">Project Setup:</Label>
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center" Foreground="White">Select Setup CSV File:</TextBlock>
 
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
-            <Button Background="CornflowerBlue" Grid.Column="2" x:Name="btnselect" Width="100" HorizontalAlignment="Right" Click="btnselect_Click">Select</Button>
-            <TextBox x:Name="tbxFile" Grid.Column="0" FontFamily="Arial"></TextBox>
+            <Button Background="White" Grid.Column="2" x:Name="btnselect" Width="100" HorizontalAlignment="Right" Click="btnselect_Click">Select</Button>
+            <TextBox x:Name="tbxFile" Grid.Column="0" FontFamily="Arial" Background="#FFB3B2B2" Foreground="#FFD009FF"></TextBox>
         </Grid>
 
-        <TextBlock Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center">Select Units:</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center" Foreground="White">Select Units:</TextBlock>
 
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-            <RadioButton x:Name="metric" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Center" FontStyle="Italic" GroupName="Units" IsChecked="True">Metric</RadioButton>
-            <RadioButton x:Name="imperial" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Center" FontStyle="Italic" GroupName="Units">Imperial</RadioButton>
+            <RadioButton x:Name="metric" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Center" FontStyle="Italic" GroupName="Units" IsChecked="True" Foreground="#FFEFEDED">Metric</RadioButton>
+            <RadioButton x:Name="imperial" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Center" FontStyle="Italic" GroupName="Units" Foreground="#FFEFEDED">Imperial</RadioButton>
         </StackPanel>
 
-        <TextBlock Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center">Select View Types to create:</TextBlock>
-        
+        <TextBlock Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center" Foreground="White">Select View Types to create:</TextBlock>
+
         <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Vertical">
-            <CheckBox x:Name="floor" Grid.Column="1" Margin="0,10,0,0" VerticalAlignment="Center">Floor Plans</CheckBox>
-            <CheckBox x:Name="ceiling"  Grid.Column="1" Margin="0,10,0,0" VerticalAlignment="Center">Ceiling Plans</CheckBox>
+            <CheckBox x:Name="floor" Grid.Column="1" Margin="0,10,0,0" VerticalAlignment="Center" Foreground="White">Floor Plans</CheckBox>
+            <CheckBox x:Name="ceiling"  Grid.Column="1" Margin="0,10,0,0" VerticalAlignment="Center" Foreground="White">Ceiling Plans</CheckBox>
         </StackPanel>
 
         <Grid Grid.Row="9" Grid.Column="1">
@@ -64,8 +64,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="160"/>
             </Grid.ColumnDefinitions>
-            <Button Background="CornflowerBlue" Grid.Column="1" x:Name="btnOk" Width="75" HorizontalAlignment="Left" Click="btnOK_Click" Margin="0,0,5,0">Ok</Button>
-            <Button Background="CornflowerBlue" Grid.Column="1" x:Name="btnCancel" Width="75" HorizontalAlignment="Right" Click="btnCancel_Click" Margin="5,0,0,0">Cancel</Button>
+            <Button Background="White" Grid.Column="1" x:Name="btnOk" Width="75" HorizontalAlignment="Left" Click="btnOK_Click" Margin="0,0,5,0">Ok</Button>
+            <Button Background="White" Grid.Column="1" x:Name="btnCancel" Width="75" HorizontalAlignment="Right" Click="btnCancel_Click" Margin="5,0,0,0">Cancel</Button>
         </Grid>
 
     </Grid>
