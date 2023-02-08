@@ -61,7 +61,11 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Classes\ButtonDataClass.cs" />
+    <Compile Include="Command2.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="Forms\MyForm2.xaml.cs">
+      <DependentUpon>MyForm2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,6 +94,10 @@
     <EmbeddedResource Include="Resources\Blue_16.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Forms\MyForm2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Forms\MyForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
