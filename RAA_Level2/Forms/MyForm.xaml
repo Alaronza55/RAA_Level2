@@ -35,7 +35,7 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Arial Black" FontSize="20" Foreground="White">Project Setup:</Label>
-        <Image Source="/RAA_Level2;component/Resources/Logo Valens NB.png" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="0"></Image>
+        <Image Source="/RAA_Level2;component/Resources/Logo Valens NB.png" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="0"/>
         <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Arial" VerticalAlignment="Center" Foreground="White">Select Setup CSV File:</TextBlock>
 
         <Grid Grid.Row="2" Grid.Column="1">
