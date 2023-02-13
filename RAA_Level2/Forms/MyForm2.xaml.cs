@@ -1,6 +1,4 @@
-﻿using Autodesk.Revit.DB;
-using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,33 +12,41 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
 
-
-namespace RAA_Level2
+namespace RAA_Level_2_Skills
 {
     /// <summary>
     /// Interaction logic for Window.xaml
     /// </summary>
     public partial class MyForm2 : Window
     {
-        public DocumentPage myDoc;
-        public MyForm2(string testText, DocumentPage doc)
+        public Document myDoc;
+        public MyForm2(string testText, Document doc, List<string> listBoxItems)
         {
             InitializeComponent();
             myDoc = doc;
 
-            lblLabel.Content = testText + doc.PathName;
-
-            foreach (string item in listBoxItem)
+            if (testText == "" && listBoxItems == null)
+                PopulateControls();
+            else
             {
-                listBox.Items.Add(item);
+                lblLabel.Content = testText + doc.PathName;
+
+                foreach (string item in listBoxItems)
+                {
+                    lbxText.Items.Add(item);
+                }
+
+                cmbViews.Items.Add(testText);
             }
 
-            cmbBoxViews.Items.Add("This is my first comboBOX item");
+            cmbViews.SelectedIndex = 0;
 
         }
 
-        public void DocumentTest()
+        public void PopulateControls()
         {
             FilteredElementCollector collector = new FilteredElementCollector(myDoc);
             collector.OfCategory(BuiltInCategory.OST_Views);
@@ -48,14 +54,32 @@ namespace RAA_Level2
 
             foreach (View currentView in collector)
             {
-                listBox.Items.Add(currentView.Name);
-                cmbBox.Items.Add(currentView.Name);
+                lbxText.Items.Add(currentView.Name);
+                cmbViews.Items.Add(currentView.Name);
             }
+
+        }
+        public string GetSelectedComboboxItem()
+        {
+            return cmbViews.SelectedItem.ToString();
+        }
+
+        public List<string> GetSelectedListboxItems()
+        {
+            List<string> returnList = new List<string>();
+
+            foreach (var item in lbxText.SelectedItems)
+            {
+                returnList.Add(item.ToString());
+            }
+
+            return returnList;
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            DocumentTest();
+            this.DialogResult = true;
+            this.Close();
         }
     }
 }
